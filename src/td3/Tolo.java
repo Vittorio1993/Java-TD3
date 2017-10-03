@@ -17,12 +17,15 @@ public class Tolo {
     public Tolo(){
         arraytolo=new ArrayList<>();
     }
+    
+    public ArrayList<Integer> get(){
+        return arraytolo;
+    }
     public void listtolo(){
-        Integer n;
-        while(arraytolo.size()<4){
-             n=(int)(Math.random()*20+1);
-             if(!arraytolo.contains(n)){
-                 arraytolo.add(n);
+       while(arraytolo.size()<4){
+            Number20 n=new Number20();
+             if(!arraytolo.contains(n.get())){
+                 arraytolo.add(n.get());
              }
         }
     }

@@ -15,14 +15,14 @@ public class SuperTolo extends Tolo {
     
     @Override
      public void listtolo(){
-        Integer n;
-        while(arraytolo.size()<5){
-             n=(int)(Math.random()*20+1);
-             if(!arraytolo.contains(n)){
-                 arraytolo.add(n);
-              
+         while(arraytolo.size()<4){
+            Number20 n=new Number20();
+             if(!arraytolo.contains(n.get())){
+                 arraytolo.add(n.get());
              }
         }
+         Number10 n1=new Number10();
+         arraytolo.add(n1.get());
     }
     @Override
     public void afficher(){

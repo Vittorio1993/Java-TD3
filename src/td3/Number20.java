@@ -4,17 +4,17 @@
  * and open the template in the editor.
  */
 package td3;
-import java.util.ArrayList;
 
 /**
  *
  * @author zhanghuakai
  */
-public class Player {
-    private ArrayList<Grid> lstgrid;
-    
-    public Player(){
-        lstgrid =new ArrayList<>();
+public class Number20{
+    private Integer n;
+    public Number20(){
+        n=(int)(Math.random()*20+1);
     }
-    
+    public Integer get(){
+        return n;
+    }
 }
