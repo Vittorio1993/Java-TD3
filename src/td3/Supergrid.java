@@ -9,6 +9,19 @@ package td3;
  *
  * @author zhanghuakai
  */
-public class Supergrid {
+public class Supergrid extends Grid{
+    
+    
+    public Supergrid(Integer m) {
+        super(m);
+    }
+    
+    public void supergridtolo(Integer a,Integer b,Integer c,Integer d, Integer e){
+        lstgrid.add(a);
+        lstgrid.add(b);
+        lstgrid.add(c);
+        lstgrid.add(d);
+        lstgrid.add(e);
+    }
     
 }

@@ -12,20 +12,17 @@ import java.util.ArrayList;
  * @author zhanghuakai
  */
 public class Tolo {
-    ArrayList<Integer> arraytolo;
+    protected ArrayList<Integer> arraytolo;
     
     public Tolo(){
         arraytolo=new ArrayList<>();
     }
     public void listtolo(){
-        
-        //Random l=new Random();
         Integer n;
         while(arraytolo.size()<4){
              n=(int)(Math.random()*20+1);
              if(!arraytolo.contains(n)){
                  arraytolo.add(n);
-              
              }
         }
     }
