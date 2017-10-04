@@ -12,8 +12,10 @@ import java.util.ArrayList;
  * @author zhanghuakai
  */
 public class Supergrid extends Grid{
-    public Supergrid(Integer m) {
-        super(m);
+    private Boolean supernumber;
+    
+    public Supergrid(Integer m, Integer n) {
+        super(m,n);
     }
     
     public void supergridtolo(Integer a,Integer b,Integer c,Integer d, Integer e){
@@ -26,7 +28,8 @@ public class Supergrid extends Grid{
     @Override
     public void compareorder(ArrayList lsttolo){
         Integer n=0;
-        for (int i=0;i<lsttolo.size();i++){
+        Boolean m=false;
+        for (int i=0;i<lsttolo.size()-1;i++){
             if(lsttolo.get(i)==lstgrid.get(i)){
                 n=n+1;
             }
@@ -42,11 +45,18 @@ public class Supergrid extends Grid{
                 reward=0;
                 break;
         }
-        System.out.println(n+" "+reward);
+        if(lsttolo.get(lsttolo.size()-1)==lstgrid.get(lsttolo.size()-1)){
+            m=true;
+            reward=reward*5;
+            
+        }
+        this.supernumber=m;
+        numbercorrect=n;
     }
     @Override
         public void comparenoorder(ArrayList lsttolo){
         Integer n=0;
+        Boolean m=false;
         for (int i=0;i<lsttolo.size();i++){
             if(lsttolo.contains(lstgrid.get(i))){
                 n=n+1;
@@ -63,6 +73,33 @@ public class Supergrid extends Grid{
                 reward=0;
                 break;
         }
-         System.out.println(n+" "+reward);
+        if(lsttolo.get(lsttolo.size()-1)==lstgrid.get(lsttolo.size()-1)){
+            m=true;
+            reward=reward*5;
+            
+        }
+        this.supernumber=m;
+        numbercorrect=n;
     }
+
+    @Override
+    public Integer getmise() {
+        return this.mise;
+    }
+
+    @Override
+    public Integer getnumber() {
+        return this.number; 
+    }
+    
+    @Override
+    public Integer getreward() {
+        return this.reward; 
+    }
+    
+    public Boolean getsupernumber(){
+        return supernumber;
+    }
+
+    
 }

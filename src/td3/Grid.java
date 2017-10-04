@@ -15,12 +15,24 @@ public class Grid {
     protected Integer mise;
     protected Integer number;
     protected Integer reward;
-    public Grid(Integer m){
+    protected Integer numbercorrect;
+    public Grid(Integer m,Integer n){
+    number=n;
     mise=m;
-    lstgrid=new ArrayList<>();  
+    lstgrid=new ArrayList<>(); 
+   
 }
      public ArrayList<Integer> get(){
         return lstgrid;
+    }
+    public Integer getnumber(){
+        return number;
+    }
+    public Integer getmise(){
+        return mise;
+    }
+    public Integer getreward(){
+        return reward;
     }
     public void gridtolo(Integer a,Integer b,Integer c,Integer d){
         lstgrid.add(a);
@@ -28,6 +40,13 @@ public class Grid {
         lstgrid.add(c);
         lstgrid.add(d);
     }
+    
+   /* public void afficher(){
+        for(int i=0;i<lstgrid.size();i++){
+            System.out.println(lstgrid.get(i));
+        }
+    }*/
+    
     public void compareorder(ArrayList lsttolo){
         Integer n=0;
         for (int i=0;i<lsttolo.size();i++){
@@ -35,19 +54,21 @@ public class Grid {
                 n=n+1;
             }
         }
-        if (n==3){
-            reward=mise*5;
-         }
-         else if(n==5){
-             reward=mise*50;
-         }
-         else{
-             reward=0;
-         }
-         System.out.println(n+" "+reward);
-        
-        //return n;       
+        switch (n) {
+            case 3:
+                reward=mise*5;
+                break;
+            case 5:
+                reward=mise*50;
+                break;
+            default:
+                reward=0;
+                break;
+        } 
+        numbercorrect=n;
+          
     }
+    
     public void comparenoorder(ArrayList lsttolo){
         Integer n=0;
         for (int i=0;i<lsttolo.size();i++){
@@ -66,7 +87,7 @@ public class Grid {
                 reward=0;
                 break;
         }
-         System.out.println(n+" "+reward);
+        numbercorrect=n;
     }
     
 }
